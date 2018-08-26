@@ -12,6 +12,10 @@ before_install:
   - wget https://github.com/sormuras/bach/raw/master/install-jdk.sh
   - chmod +x gradlew
 
+# override install to skip 'gradle assemble'
+install:
+  - true
+
 env:
   global:
     - TERM=dumb
@@ -26,6 +30,7 @@ matrix:
       install: . ./install-jdk.sh -F 10 -L BCL
 
 script:
+  - npm install && npx commitlint-travis
   - java -version
   - ./gradlew clean build
 

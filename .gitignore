@@ -18,7 +18,10 @@ build/
 classes/
 idea/
 .gradle/
+
 node_modules/
+package-lock.json
+yarn.lock
 
 jadx-output/
 *-tmp/
